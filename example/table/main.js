@@ -20,7 +20,7 @@ function buildTable(data) {
 
   return (
     <DataTable
-      className="container"
+      className="dataTables_wrapper form-inline no-footer"
       keys={[ 'NAME', 'OUTLET TYPE', 'STREET ADDRESS' ]}
       columns={tableColumns}
       initialData={data}

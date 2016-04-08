@@ -18,7 +18,7 @@ class SelectField extends Component {
 
     return (
       <div>
-        <label htmlFor={id}>{label}</label>
+        <label htmlFor={id} className="show-value-label">{label}</label>
         <select id={id} value={value} onChange={this.onChange}>
           {mappedOpts}
         </select>

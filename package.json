@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/carlosrocha/react-data-components"
+    "url": "https://github.com/renowan/react-data-components"
   },
   "babel": {
     "stage": 0
@@ -30,6 +30,7 @@
     "react-dom": "^0.14.1"
   },
   "dependencies": {
+    "lodash-compat": "^3.10.2",
     "lodash.some": "^3.2.3",
     "lodash.sortby": "^3.1.5"
   },
@@ -43,6 +44,7 @@
     "eslint-plugin-react": "^3.6.3",
     "flux": "^2.1.1",
     "jest-cli": "^0.6.1",
+    "object-assign": "^4.0.1",
     "react-addons-test-utils": "^0.14.1",
     "rimraf": "^2.4.3",
     "webpack": "^1.12.2",

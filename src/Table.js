@@ -23,7 +23,16 @@ let getCellClass =
 
 function buildSortProps(col, sortBy, onSort) {
   let order = sortBy.prop === col.prop ? sortBy.order : 'none';
+  // sorting_asc
+  // sorting_desc
+  // sorting
+
+  // sort-icon sort-none
+  // sort-icon sort-descending
+  // sort-icon sort-ascending
+
   let nextOrder = order === 'ascending' ? 'descending' : 'ascending';
+  // let nextOrder = order === 'ascending' ? '_desc' : '_asc';
   let sortEvent = onSort.bind(null, { prop: col.prop, order: nextOrder });
 
   return {
@@ -117,8 +126,14 @@ export default class Table extends Component {
         order = sortProps['aria-sort'];
       }
 
+      let thSortClass = '';
+      if(order != 'none'){
+          thSortClass = order === 'descending' ? '_desc' : '_asc';
+      }
+
       return (
         <th
+          className={`sorting${thSortClass}`}
           ref={c => this._headers[idx] = c}
           key={idx}
           style={{width: col.width}}
@@ -151,7 +166,7 @@ export default class Table extends Component {
         <caption className="sr-only" role="alert" aria-live="polite">
           {`Sorted by ${sortBy.prop}: ${sortBy.order} order`}
         </caption>
-        <thead>
+        <thead className="bordered-negative">
           <tr>
             {headers}
           </tr>

@@ -15,33 +15,26 @@ var DataTable = React.createClass({
 
     return (
       <div className={this.props.className}>
-        <div className="row">
-          <div className="col-xs-4">
+        <div className="DTTT btn-group">
             <SelectField
               id="page-menu"
-              label="Page size:"
+              label="表示件数:"
               value={this.state.pageLength}
               options={this.props.pageLengthOptions}
               onChange={this.onPageLengthChange}
             />
+        </div>
+        <div className="dataTables_filter">
             <SearchField
               id="search-field"
-              label="Search:"
+              label="Searchk:"
               value={this.state.filterValues.globalSearch}
               onChange={this.onFilter.bind(this, 'globalSearch')}
             />
-          </div>
-          <div className="col-xs-8">
-            <Pagination
-              className="pagination pull-right"
-              currentPage={page.currentPage}
-              totalPages={page.totalPages}
-              onChangePage={this.onChangePage}
-            />
-          </div>
+
         </div>
         <Table
-          className="table table-bordered"
+          className="table table-bordered no-footer"
           dataArray={page.data}
           columns={this.props.columns}
           keys={this.props.keys}
@@ -49,6 +42,21 @@ var DataTable = React.createClass({
           sortBy={this.state.sortBy}
           onSort={this.onSort}
         />
+        <div className="row DTTTFooter">
+            <div className="col-sm-6">
+                <div className="dataTables_info">件数：{this.state.data.length}</div>
+            </div>
+            <div className="col-sm-6">
+                <Pagination
+                  className="pagination pull-right"
+                  currentPage={page.currentPage}
+                  totalPages={page.totalPages}
+                  onChangePage={this.onChangePage}
+                />
+            </div>
+            {' '}
+
+        </div>
       </div>
     );
   },
