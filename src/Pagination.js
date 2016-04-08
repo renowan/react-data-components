@@ -121,9 +121,12 @@ export default class Pagination extends Component {
     ]);
 
     return (
-      <ul className={this.props.className} aria-label="Pagination">
-        {buttons}
-      </ul>
+        <div className="dataTables_paginate paging_bootstrap">
+            <ul className={this.props.className} aria-label="Pagination">
+              {buttons}
+            </ul>
+        </div>
+
     );
   }
 }

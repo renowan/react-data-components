@@ -1,5 +1,5 @@
-var sortBy = require('lodash.sortby');
-var some = require('lodash.some');
+var sortBy = require('lodash-compat/collection/sortby');
+var some = require('lodash-compat/collection/some');
 
 /**
  * @param {object} sortBy Object containing `prop` and `order`.
